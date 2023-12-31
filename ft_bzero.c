@@ -1,15 +1,12 @@
-#include <string.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char *arr;
+	unsigned char	*arr;
+	size_t			i;
 
-    arr = s;
-    while (n > 0)
-    {
-        *arr = 0;
-        arr++;
-        n--;
-    }
-    return (s);
+	arr = s;
+	i = -1;
+	while (++i < n)
+		arr[i] = 0;
 }

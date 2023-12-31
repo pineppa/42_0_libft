@@ -1,8 +1,8 @@
 #include "libft.h"
 
-int     num_digits(int n)
+int	num_digits(int n)
 {
-	int size;
+	int	size;
 
 	size = 1;
 	if (n >= 0)
@@ -13,7 +13,7 @@ int     num_digits(int n)
 	while (n < 0)
 	{
 		n = n / 10;
-		size++;   
+		size++;
 	}
 	return (size);
 }
@@ -25,14 +25,13 @@ char	get_digit(int n)
 	return (n);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char    *str;
-	int		n_dig;
+	char	*str;
 
-	str = malloc(sizeof(char) * (num_digits(n) + 1));
+	str = (char *) malloc(sizeof(char) * (num_digits(n) + 1));
 	if (!str)
-		return(NULL);
+		return (NULL);
 	if (n > 0)
 		n = n * -1;
 	else
@@ -44,7 +43,7 @@ char    *ft_itoa(int n)
 	{
 		*str = get_digit(n) + '0';
 		str++;
-		n = n / 10; 
+		n = n / 10;
 	}
 	*str = get_digit(n) + '0';
 	return (str);

@@ -1,4 +1,4 @@
-include freeeee;
+#include "libft.h"
 
 int	ft_chk_charset(char c, char *charset)
 {

@@ -1,7 +1,7 @@
 
 ROOT_DIR = $(shell pwd)
 
-SRC_FILES = ft_*.c libft.h
+SRC_FILES = $(wildcard ft_*.c)
 
 SRCS = $(addprefix $(ROOT_DIR)/, $(SRC_FILES))
 

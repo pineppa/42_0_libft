@@ -1,6 +1,6 @@
-#include "ft.h"
+#include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len1;
 	int		len2;
