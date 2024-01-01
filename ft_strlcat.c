@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/01 14:25:18 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/01 14:25:18 by jsala            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 unsigned int	ft_strlen(char *arr);
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
