@@ -6,11 +6,11 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:26:36 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:33:48 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/01 22:18:04 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

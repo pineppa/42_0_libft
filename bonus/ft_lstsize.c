@@ -6,11 +6,11 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:26:43 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:34:13 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/01 22:18:11 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
