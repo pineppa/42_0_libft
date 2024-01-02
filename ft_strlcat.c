@@ -6,11 +6,11 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:18 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:25:18 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/02 13:22:55 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *arr);
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -33,14 +33,4 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	dest[l_dest] = '\0';
 	return (res);
-}
-
-unsigned int	ft_strlen(char *arr)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (arr[i] != '\0')
-		i++;
-	return (i);
 }
