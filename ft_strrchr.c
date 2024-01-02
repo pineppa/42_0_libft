@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:20:29 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:31:18 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/01 14:32:36 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/02 17:07:39 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+char	*ft_strrchr(const char *s, int c)
 {
-	write(fd, &c, 1);
+	char	*r;
+
+	r = 0;
+	while (*s)
+	{
+		if (*s++ == c)
+			r = (char *)s;
+	}
+	return (r);
 }

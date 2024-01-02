@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:26:36 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 22:18:04 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/02 17:04:29 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst->next != NULL)
+	while (lst)
 	{
-		lst->content = f(lst->content);
+		f(lst->content);
 		lst = lst->next;
 	}
 }

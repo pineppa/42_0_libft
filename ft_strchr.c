@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:32:36 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:32:36 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/01 14:32:32 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/02 17:06:46 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	char	*r;
+#include "libft.h"
 
-	*r = 0;
-	while (*s)
+char	*ft_strchr(const char *s, int c)
+{
+	while (s++)
 	{
-		if (*s++ == c)
-			r = s;
+		if (*s == c)
+			return ((char *)s);
 	}
-	return (r);
+	return (0);
 }
