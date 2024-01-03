@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:15 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:25:15 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 10:51:42 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = -1;
 	while (++i < len1)
 		str[i] = s1[i];
-	while (++i < len1 + len2)
-		str[i] = s2[i - len1];
+	i = -1;
+	while (++i < len2)
+		str[len1 + i] = s2[i];
+	str[len1 + i] = 0;
 	return (str);
 }

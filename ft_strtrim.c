@@ -6,28 +6,19 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:36 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:25:36 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 11:52:23 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen2(const char *str)
-{
-	int	c;
-
-	c = 0;
-	while (str[c])
-		c++;
-	return (c);
-}
+//#include <stdio.h>
 
 int	ft_strchk(char c, const char *set)
 {
 	int	count;
 
-	count = 0;
-	while (set[count])
+	count = -1;
+	while (set[++count])
 	{
 		if (c == set[count])
 			return (1);
@@ -43,16 +34,32 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 
 	lp = 0;
-	while (ft_strchk(s1[lp], set))
+	while (s1[lp] && ft_strchk(s1[lp], set))
 		lp++;
-	rp = ft_strlen2(s1);
-	while (ft_strchk(s1[rp], set))
+	rp = ft_strlen(s1) - 1;
+	while (rp > 0 && ft_strchk(s1[rp], set))
 		rp--;
-	tr_str = malloc(sizeof(char) * (rp - lp + 1));
+	tr_str = malloc(sizeof(char) * (rp - lp + 2));
 	if (!tr_str)
 		return (NULL);
-	i = -1;
-	while (++i < rp - lp)
+	i = 0;
+	while (i <= rp - lp)
+	{
 		tr_str[i] = s1[lp + i];
-	return (tr_str);
+		i++;
+	}
+	tr_str[i] = 0;
+	return ((char *)tr_str);
 }
+
+/*
+int	main(void)
+{
+	char *str;
+
+	str = malloc(50);
+	str = ft_strtrim("lorem ipsum dolor sit amet", " ");
+	printf("The return of ft_strtrim is %s\n", str);
+	return (0);
+}
+*/

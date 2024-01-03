@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:52 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/02 17:31:41 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 11:15:06 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int				ft_memcmp(const void *str1, const void *str2, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
-char			*ft_strchr(const char *s, int c);
-char			*ft_strdup(char *src);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 size_t			ft_strlen(const char *s);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strdup(const char *src);
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
 char			*ft_strrchr(const char *s, int c);
 void			*ft_calloc(size_t nmemb, size_t size);

@@ -6,19 +6,24 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:32:36 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/02 17:07:39 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 09:05:08 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
+	int		i;
 	char	*r;
 
+	i = 0;
 	r = 0;
-	while (*s)
+	while (s[i])
 	{
-		if (*s++ == c)
-			r = (char *)s;
+		if (s[i] == (char)c)
+			r = (char *)s + i;
+		i++;
 	}
+	if (c == 0)
+		r = (char *)s + i;
 	return (r);
 }

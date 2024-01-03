@@ -6,57 +6,51 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:19:59 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:24:28 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 08:47:48 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_digits(int n)
+char	*ft_reverse(char *str)
 {
-	int	size;
+	int		len;
+	int		i;
+	char	*rev;
 
-	size = 1;
-	if (n >= 0)
-	{
-		size--;
-		n *= -1;
-	}
-	while (n < 0)
-	{
-		n = n / 10;
-		size++;
-	}
-	return (size);
-}
-
-char	get_digit(int n)
-{
-	while (n > 10)
-		n = n / 10;
-	return (n);
+	i = -1;
+	len = ft_strlen(str);
+	rev = malloc(sizeof(char) * (len + 1));
+	if (!rev)
+		return (NULL);
+	while (++i < len)
+		rev[len - i - 1] = str[i];
+	free(str);
+	return (rev);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*str;
+	char	sign;
 
-	str = (char *) malloc(sizeof(char) * (num_digits(n) + 1));
+	sign = '-';
+	str = (char *) malloc(sizeof(char) * (12));
 	if (!str)
 		return (NULL);
 	if (n > 0)
 		n = n * -1;
-	else
-	{
-		*str = '-';
-		str++;
-	}
 	while (n > 9)
 	{
-		*str = get_digit(n) + '0';
+		*str = n % 10 + '0';
 		str++;
 		n = n / 10;
 	}
-	*str = get_digit(n) + '0';
-	return (str);
+	*str = n + '0';
+	if (n > 0)
+	{
+		str++;
+		*str = sign;
+	}
+	return (ft_reverse(str));
 }
