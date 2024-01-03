@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:26:30 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 22:18:02 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 13:15:27 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next != NULL)
+	if(!lst)
+		return (0);
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }

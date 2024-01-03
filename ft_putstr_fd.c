@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:03 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/02 17:32:25 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 12:00:28 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	while (s[i])
-		write(fd, &s[i++], 1);
+		i++;
+	write(fd, s, i);
 }

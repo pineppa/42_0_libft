@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:19:59 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 08:47:48 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 14:12:43 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,47 @@
 
 char	*ft_reverse(char *str)
 {
-	int		len;
+	char	c;
+	int		s_len;
 	int		i;
-	char	*rev;
 
 	i = -1;
-	len = ft_strlen(str);
-	rev = malloc(sizeof(char) * (len + 1));
-	if (!rev)
-		return (NULL);
-	while (++i < len)
-		rev[len - i - 1] = str[i];
-	free(str);
-	return (rev);
+	s_len = ft_strlen(str);
+	while (i < s_len / 2)
+	{
+		c = str[i];
+		str[i] = str[s_len - 1 - i];
+		str[s_len - i - 1] = c;
+		i++;
+	}
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*str;
-	char	sign;
+	int		sign;
+	int		i;
 
-	sign = '-';
-	str = (char *) malloc(sizeof(char) * (12));
+	str = (char *)malloc(sizeof(char) * (12));
 	if (!str)
 		return (NULL);
-	if (n > 0)
+	i = 0;
+	sign = -1;
+	if (n >= 0)
+	{
 		n = n * -1;
-	while (n > 9)
-	{
-		*str = n % 10 + '0';
-		str++;
-		n = n / 10;
+		sign = 1;
+		if (n == 0)
+			str[i++] = '0';
 	}
-	*str = n + '0';
-	if (n > 0)
+	while (n < 0)
 	{
-		str++;
-		*str = sign;
+		str[i++] = -(n % 10) + '0';
+		n /= 10;
 	}
+	if (sign < 0)
+		str[i++] = '-';
+	str[i] = 0;
 	return (ft_reverse(str));
 }

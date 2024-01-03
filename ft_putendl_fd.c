@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:20:23 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/02 16:57:21 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 12:01:23 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	while (s[i])
-		write(fd, &s[i++], 1);
+		i++;
+	write(fd, s, i);
 	write(fd, "\n", 1);
 }

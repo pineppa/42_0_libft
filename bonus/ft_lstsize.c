@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:26:43 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 22:18:11 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 13:12:01 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while (lst->next != NULL)
+	while (lst)
 	{
 		lst = lst->next;
 		i++;

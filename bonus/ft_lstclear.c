@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:26:10 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/02 17:32:14 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 13:19:48 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	temp = (t_list *)malloc(sizeof(t_list *));
-	temp = *lst;
-	while (temp->next)
+	while (*lst)
 	{
+		temp = *lst;
+		*lst = (*lst)->next;
 		del(temp->content);
-		temp = temp->next;
-		temp->next = NULL;
 		free(temp);
 	}
 }

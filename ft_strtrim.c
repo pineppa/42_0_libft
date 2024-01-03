@@ -6,12 +6,11 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:36 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 11:52:23 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 12:27:45 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_strchk(char c, const char *set)
 {
@@ -51,15 +50,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	tr_str[i] = 0;
 	return ((char *)tr_str);
 }
-
-/*
-int	main(void)
-{
-	char *str;
-
-	str = malloc(50);
-	str = ft_strtrim("lorem ipsum dolor sit amet", " ");
-	printf("The return of ft_strtrim is %s\n", str);
-	return (0);
-}
-*/

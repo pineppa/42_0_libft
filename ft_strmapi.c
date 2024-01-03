@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:25 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:25:26 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 12:20:52 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		count;
-	char	*str;
+	unsigned int	count;
+	char			*str;
 
-	count = 0;
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
-	while (*s)
-	{
+	count = -1;
+	while (s[++count])
 		str[count] = f(count, s[count]);
-		s++;
-	}
+	str[++count] = 0;
 	return (str);
 }

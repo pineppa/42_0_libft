@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:26:07 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/02 17:05:54 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 12:34:16 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
+	*lst = new;
 }
