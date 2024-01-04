@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:32:28 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 19:03:32 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/04 13:44:11 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*arr;
 
-	if (!nmemb || !size)
-		return (NULL);
-	arr = (void *)malloc(size * nmemb + 1);
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	arr = (void *)malloc(size * nmemb);
 	if (!arr)
 		return (NULL);
 	ft_bzero(arr, size * nmemb);

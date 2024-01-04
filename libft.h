@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:52 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 18:50:37 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/04 15:29:01 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ size_t			ft_strlen(const char *s);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *src);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
 char			*ft_strrchr(const char *s, int c);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);

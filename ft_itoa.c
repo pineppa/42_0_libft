@@ -6,11 +6,26 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:19:59 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 14:12:43 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/04 14:42:04 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_ndigits(int n)
+{
+	int	count;
+
+	count = 1;
+	if (n <= 0)
+		count++;
+	while (n)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
 
 char	*ft_reverse(char *str)
 {
@@ -36,7 +51,7 @@ char	*ft_itoa(int n)
 	int		sign;
 	int		i;
 
-	str = (char *)malloc(sizeof(char) * (12));
+	str = (char *)malloc(sizeof(char) * ft_ndigits(n));
 	if (!str)
 		return (NULL);
 	i = 0;
