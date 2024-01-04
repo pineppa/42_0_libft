@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:26:33 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 13:40:52 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/01 14:26:43 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/04 12:46:55 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new_lst;
-	t_list	*new_ele;
+	int	i;
 
-	if (!lst)
-		return (NULL);
-	new_lst = ft_lstnew(f(lst->content));
-	if (!new_lst)
-		return (NULL);
-	lst = lst->next;
+	i = 0;
 	while (lst)
 	{
-		new_ele = ft_lstnew(f(lst->content));
-		if (!new_ele)
-		{
-			ft_lstclear(&new_lst, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new_lst, new_ele);
 		lst = lst->next;
+		i++;
 	}
-	return (new_lst);
+	return (i);
 }

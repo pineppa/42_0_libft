@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:25:40 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 19:06:14 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/01 14:26:33 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/04 13:13:32 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*cpy;
-	size_t	i;
-	size_t	s_len;
+	t_list	*new_lst;
+	t_list	*new_ele;
 
-	s_len = ft_strlen(s);
-	i = -1;
-	cpy = malloc(sizeof(char) * (s_len + 1));
-	if (!cpy)
+	if (!lst || *f || *del)
 		return (NULL);
-	if (start > s_len)
+	new_lst = ft_lstnew(f(lst->content));
+	if (!new_lst)
+		return (NULL);
+	lst = lst->next;
+	while (lst)
 	{
-		cpy[0] = 0;
-		return (cpy);
+		new_ele = ft_lstnew(f(lst->content));
+		if (!new_ele)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_ele);
+		lst = lst->next;
 	}
-	while (++i < len && s[start + i])
-		cpy[i] = s[start + i];
-	cpy[i] = 0;
-	return (cpy);
+	return (new_lst);
 }

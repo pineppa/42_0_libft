@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:32:32 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 09:03:31 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/04 12:55:16 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)s + i);
-		s++;
+		i++;
 	}
-	if (c == 0)
+	if ((char)c == '\0')
 		return ((char *)s + i);
-	return (0);
+	return (NULL);
 }

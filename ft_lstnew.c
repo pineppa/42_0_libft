@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:26:36 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/02 17:04:29 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/01 14:26:40 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/04 12:46:55 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstnew(void *content)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	t_list	*elem;
+
+	elem = (struct s_list *)malloc(sizeof(t_list));
+	elem->next = NULL;
+	elem->content = content;
+	return (elem);
 }

@@ -6,7 +6,7 @@
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:52 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 11:15:06 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/03 18:50:37 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_atoi(char *str);
 void			ft_bzero(void *s, size_t n);
+void			*ft_calloc(size_t nmemb, size_t size);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *str1, const void *str2, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
@@ -47,7 +48,7 @@ void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
-char			**ft_split(char *str, char *charset);
+char			**ft_split(const char *str, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -63,6 +64,7 @@ t_list			*ft_lstlast(t_list *lst);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 
 #endif

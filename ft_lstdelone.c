@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:26:30 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 13:15:27 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/01 14:26:13 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/04 12:46:55 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if(!lst)
-		return (0);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	del(lst->content);
+	free(lst);
 }
