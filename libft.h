@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:25:52 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/04 15:29:01 by jsala            ###   ########.fr       */
+/*   Updated: 2024/01/10 11:05:05 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int				ft_isprint(int c);
 int				ft_isdigit(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-int				ft_atoi(char *str);
+int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
 void			*ft_memchr(const void *s, int c, size_t n);

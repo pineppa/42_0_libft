@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:26:07 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/04 12:46:39 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:04:44 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/11 16:24:55 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!new)
+		return ;
+	if (!lst)
+	{
+		lst = &new;
+		return ;
+	}
 	new->next = *lst;
 	*lst = new;
 }

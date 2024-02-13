@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:19:51 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/04 09:48:46 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:05:49 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/12 15:50:12 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c < 0 || c > 127)
-		return (0);
-	return (1);
+	return (c >= 0 && c <= 127);
 }

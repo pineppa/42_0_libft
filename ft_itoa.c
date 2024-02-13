@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:19:59 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/04 14:42:04 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:04:59 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/09 14:04:59 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_reverse(char *str)
 	int		s_len;
 	int		i;
 
-	i = -1;
+	i = 0;
 	s_len = ft_strlen(str);
 	while (i < s_len / 2)
 	{
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 	int		sign;
 	int		i;
 
-	str = (char *)malloc(sizeof(char) * ft_ndigits(n));
+	str = (char *)malloc(sizeof(char) * (ft_ndigits(n)));
 	if (!str)
 		return (NULL);
 	i = 0;

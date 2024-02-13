@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:26:33 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/04 16:58:19 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:04:10 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/09 15:31:26 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,22 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*begin;
+	void	*data;
 
 	if (!lst || !f || !del)
 		return (0);
-	new_list = ft_lstnew(f(lst->content));
-	if (!new_list)
-		return (0);
-	begin = new_list;
-	lst = lst->next;
+	begin = NULL;
 	while (lst)
 	{
-		new_list->next = ft_lstnew(f(lst->content));
-		if (!new_list->next)
+		data = f(lst->content);
+		new_list = ft_lstnew(data);
+		if (!new_list)
 		{
+			del(data);
 			ft_lstclear(&begin, del);
 			return (0);
 		}
-		new_list = new_list->next;
+		ft_lstadd_back(&begin, new_list);
 		lst = lst->next;
 	}
 	new_list->next = NULL;

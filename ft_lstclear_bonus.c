@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:26:30 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/04 12:46:55 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:04:37 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/09 15:19:09 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (!lst)
-		return (0);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_list	*temp;
+
+	while (*lst)
+	{
+		temp = *lst;
+		*lst = (*lst)->next;
+		del(temp->content);
+		free(temp);
+	}
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:25:43 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:25:43 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:00:54 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/09 14:00:55 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		c = c + 32;
 	return (c);
 }

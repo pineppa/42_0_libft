@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:25:46 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:25:46 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:01:02 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/09 14:01:04 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 122)
+	if (c >= 'a' && c <= 'z')
 		c = c - 32;
 	return (c);
 }

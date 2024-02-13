@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:19:45 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/01 14:24:21 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:05:35 by jsala             #+#    #+#             */
+/*   Updated: 2024/02/12 16:44:50 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c < 48 || c > 57)
-		return (0);
-	return (1);
+	return (c >= '0' && c <= '9');
 }

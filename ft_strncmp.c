@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsala <jacopo.sala@student.barcelona.co    +#+  +:+       +#+        */
+/*   By: jsala <jsala@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 14:25:33 by jsala             #+#    #+#             */
-/*   Updated: 2024/01/03 08:52:54 by jsala            ###   ########.fr       */
+/*   Created: 2024/01/09 14:01:34 by jsala             #+#    #+#             */
+/*   Updated: 2024/01/09 14:01:35 by jsala            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(unsigned char *s1, unsigned char *s2, unsigned int n)
 {
 	unsigned int	i;
 

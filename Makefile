@@ -1,40 +1,41 @@
-
-ROOT_DIR = $(shell pwd)
-
 SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_strnstr.c
-SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+SRCS_B	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-SRC_FILES = $(addprefix $(ROOT_DIR)/, $(SRCS))
+O_FILES = $(SRCS:.c=.o)
+D_FILES = $(SRCS:.c=.d)
 
-SRC_BONUS = $(addprefix $(ROOT_DIR)/, $(SRCS_B))
-
-O_FILES = $(SRC_FILES:.c=.o)
-
-O_BONUS = $(SRC_BONUS:.c=.o)
+O_BONUS = $(SRCS_B:.c=.o)
+D_BONUS = $(SRCS_B:.c=.d)
 
 NAME = libft.a
 
-C_FLAGS = -Wall -Wextra -Werror 
+CC = cc
+C_FLAGS = -Wall -Wextra -Werror
 
-OUT_DIR = $(ROOT_DIR)
+AR = ar crs
 
 all : $(NAME)
 
 .c.o:
-	gcc ${C_FLAGS} -c -I ${ROOT_DIR} $< -o ${<:.c=.o}
+	$(CC) ${C_FLAGS} -c -MMD -MP $< -o ${<:.c=.o}
 
 $(NAME) : $(O_FILES)
-	ar -cr $(NAME) $(O_FILES)
+	$(AR) $(NAME) $(O_FILES)
+
+-include ${D_FILES} ${D_BONUS}
 
 clean :
-	rm -f $(O_FILES) $(O_BONUS)
+	rm -f $(O_FILES) $(O_BONUS) $(D_FILES) $(D_BONUS)
 
 fclean : clean
 	rm -f $(NAME)
-	
+
 re : fclean all
 
-bonus : $(NAME) $(O_BONUS) 
-	ar -cr $(NAME) $(O_BONUS)
+bonus : do_bonus
 
-.PHONY: all bonus clean fclean re
+do_bonus : $(NAME) $(O_BONUS)
+	$(AR) $(NAME) $(O_BONUS)
+	touch do_bonus
+
+.PHONY: all do_bonus bonus clean fclean re
